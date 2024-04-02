@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="js/ejemplo.js"></script>
+    <title>Document</title>
+    <script>
+    
+        
+    
+    </script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <div class="container-fluid">
+        <header>
+            <h1>Carlular la Hipotenusa</h1>
+        </header>
+        <main>
+
+            <form>
+                <div class="mb-3">
+                  <label for="cat-a" class="form-label">Ingrese el cateto a:</label>
+                  <input type="number" class="form-control " id="cat-a" placeholder="Cateto a">
+                </div>
+                <div class="mb-3">
+                    <label for="cat-b" class="form-label">NIngrese el cateto b:</label>
+                    <input type="number" class="form-control " id="cat-b" placeholder="Cateto b">
+                </div>
+                <button onclick="mostrarDatos()" type="submit" class="btn btn-primary mb-3 form-control">Mostrar datos</button>
+            </form>
+
+
+                  <p id="datos">
+
+                  </p>
+
+
+                    <script>
+                        const valores = function (hipotenusa) {
+                            Math.sqrt((cat-a * cat-a) + (catb * cat-b))
+                        };
+
+                        console.log(square(4));
+
+
+
+                        const formulario = document.querySelector('form');
+
+                    formulario.addEventListener('submit', (event) => {
+                    event.preventDefault(); 
+
+                    const carnet = event.target.elements['carnet'].value;
+                    const nombre = event.target.elements['nombre'].value;
+
+                    
+                    document.getElementById("datos").innerHTML = "Su carnet es: " + carnet + " y su nombre es: " + nombre;
+            
+                    console.log(`La hipotenusa del triangulo es:  ${carnet} `);
+
+                    alert("Su carnet es: " + carnet + " y su nombre es: "+ nombre);
+                    
+                    });
+
+                
+                    </script>
+                        </div>
+                      </form>
+                  </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
