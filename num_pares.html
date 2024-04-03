@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="container-fluid">
+    
+    <h1>Encontrar números pares</h1>
+
+    <p>Introducir un rango</p>
+    <p>Introduce un número:</p>
+    <input type="number" id="num_1" placeholder="Ingresar número">
+    <p>Introduce un segundo número:</p>
+    <input type="number" id="num_2" placeholder="Ingresar número">
+
+    <button onclick="mostrarNumPares()">Encontrar números pares</button>
+
+    <div id="num_pares"></div>
+
+    <script>
+
+        function mostrarNumPares() {
+            const num_1 = document.getElementById('num_1').value;
+            const num_2 = document.getElementById('num_2').value;
+            let num_pares = '';
+
+            
+            for (let i = Math.min(num_1, num_2); i < Math.max(num_1, num_2); i++){
+                if (i % 2 === 0){
+                    num_pares += `<li> ${i} </li>`;
+                }
+            }
+
+            document.getElementById('num-pares').innerHTML = `Los números pares encontrados dentro del rando ${num_1} a ${num_2} son: ${num_pares}`;
+
+            alert(`Los números pares encontrados dentro del rando ${num_1} a ${num_2} son: ${num_pares}`);
+
+        }
+
+    </script>
+<li></li>
+</body>
+</html>
