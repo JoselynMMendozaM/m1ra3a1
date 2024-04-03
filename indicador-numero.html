@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicar si un número es positivo, negativo o neutro</title>
+</head>
+<body class="container-fluid">
+    <h1>Indicar si un número es positivo, negativo o neutro</h1>
+    <p>Introduce un número:</p>
+    <input type="number" id="numero">
+    <button onclick="indicarSigno()">Indicar signo</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function indicarSigno() {
+    
+    const numero = document.getElementById('numero').value;
+
+    if (numero > 0) {
+        document.getElementById('resultado').innerHTML = 'El número es positivo.';
+    } else if (numero < 0) {
+        document.getElementById('resultado').innerHTML = 'El número es negativo.';
+    } else {
+        document.getElementById('resultado').innerHTML = 'El número es neutro.';
+    }
+}
+    </script>
+</body>
+</html>

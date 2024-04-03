@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="container-fluid">
+    
+    <h1>Ordenar números de mayor, medio y menor.</h1>
+    <p>Introduce un número:</p>
+    <input type="number" id="num_1" placeholder="Número 1">
+    <input type="number" id="num_2" placeholder="Número 2">
+    <input type="number" id="num_3" placeholder="Número 3">
+
+    <button onclick="indicarMayorMenorMedio()">Ordenar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function indicarMayorMenorMedio() {
+
+            const num_1 = document.getElementById('num_1').value;
+            const num_2 = document.getElementById('num_2').value;
+            const num_3 = document.getElementById('num_3').value;
+
+    
+            let mayor = num_1;
+            let menor = num_1;
+            let medio = num_1;
+
+            if (num_2 > mayor) {
+                mayor = num_2;
+            } else if (num_2 < menor) {
+                menor = num_2;
+            } else {
+                medio = num_2;
+            }
+
+            if (num_3 > mayor) {
+                mayor = num_3;
+            } else if (num_3 < menor) {
+                menor = num_3;
+            } else {
+                medio = num_3;
+            }
+
+    
+            document.getElementById('resultado').innerHTML = `El número mayor es: ${mayor}.<br>El número menor es: ${menor}.<br>El número del medio es: ${medio}.`;
+        }
+    </script>
+</body>
+</html>

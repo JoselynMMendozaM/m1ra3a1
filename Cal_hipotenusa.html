@@ -17,61 +17,42 @@
 
     <div class="container-fluid">
         <header>
-            <h1>Carlular la Hipotenusa</h1>
+          <h1>Calcular la Hipotenusa</h1>
         </header>
         <main>
+          <form>
+            <div class="mb-3">
+              <label for="catetoA" class="form-label">Ingrese el cateto a:</label>
+              <input type="number" class="form-control " id="catetoA" placeholder="Cateto a">
+            </div>
+            <div class="mb-3">
+              <label for="catetoB" class="form-label">Ingrese el cateto b:</label>
+              <input type="number" class="form-control " id="catetoB" placeholder="Cateto b">
+            </div>
+            <button onclick="calcularHipotenusa(); event.preventDefault();" type="submit" class="btn btn-primary mb-3 form-control">Mostrar datos</button>
+          </form>
+      
+          <p id="datos">
+          </p>
+          <script>
+            function calcularHipotenusa() {
+              
+              const catetoA = document.getElementById('catetoA').value;
+              const catetoB = document.getElementById('catetoB').value;
+      
+              
+              const hipotenusa = Math.sqrt(catetoA**2 + catetoB**2);
+      
+              alert(`La hipotenusa es: ${hipotenusa}`);
 
-            <form>
-                <div class="mb-3">
-                  <label for="cat-a" class="form-label">Ingrese el cateto a:</label>
-                  <input type="number" class="form-control " id="cat-a" placeholder="Cateto a">
-                </div>
-                <div class="mb-3">
-                    <label for="cat-b" class="form-label">NIngrese el cateto b:</label>
-                    <input type="number" class="form-control " id="cat-b" placeholder="Cateto b">
-                </div>
-                <button onclick="mostrarDatos()" type="submit" class="btn btn-primary mb-3 form-control">Mostrar datos</button>
-            </form>
+                   
+                console.log(`La hipotenusa es: ${hipotenusa}`);
 
-
-                  <p id="datos">
-
-                  </p>
-
-
-                    <script>
-                        const valores = function (hipotenusa) {
-                            Math.sqrt((cat-a * cat-a) + (catb * cat-b))
-                        };
-
-                        console.log(square(4));
-
-
-
-                        const formulario = document.querySelector('form');
-
-                    formulario.addEventListener('submit', (event) => {
-                    event.preventDefault(); 
-
-                    const carnet = event.target.elements['carnet'].value;
-                    const nombre = event.target.elements['nombre'].value;
-
-                    
-                    document.getElementById("datos").innerHTML = "Su carnet es: " + carnet + " y su nombre es: " + nombre;
-            
-                    console.log(`La hipotenusa del triangulo es:  ${carnet} `);
-
-                    alert("Su carnet es: " + carnet + " y su nombre es: "+ nombre);
-                    
-                    });
-
-                
-                    </script>
-                        </div>
-                      </form>
-                  </form>
-            </section>
+              const datosDiv = document.getElementById('datos');
+              datosDiv.innerHTML = `La hipotenusa es: ${hipotenusa}`;
+            }
+          </script>
         </main>
-    </div>
+      </div>
 </body>
 </html>

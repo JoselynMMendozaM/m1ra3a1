@@ -28,39 +28,31 @@
                 </div>
                 <button onclick="mostrarDatos()" type="submit" class="btn btn-primary mb-3 form-control">Mostrar datos</button>
             </form>
+            <p id="datos">
+            </p>
+            <script>
+                function mostrarDatos() {
+                    
+                    const carnet = document.getElementById('carnet').value;
+                    const nombre = document.getElementById('nombre').value;
 
+                   
+                    alert(`Su carnet es: ${carnet}\nSu nombre es: ${nombre}`);
 
-                  <p id="datos">
-
-                  </p>
-
-
-                    <script>
-                        const formulario = document.querySelector('form');
-
-                    formulario.addEventListener('submit', (event) => {
-                    event.preventDefault(); 
-
-                    const carnet = event.target.elements['carnet'].value;
-                    const nombre = event.target.elements['nombre'].value;
+                   
+                    console.log(`Su carnet es: ${carnet}`);
+                    console.log(`Su nombre es: ${nombre}`);
 
                     
-                    document.getElementById("datos").innerHTML = "Su carnet es: " + carnet + " y su nombre es: " + nombre;
-            
+                    const datosDiv = document.getElementById('datos');
+                    datosDiv.innerHTML = `<h2>Datos</h2><p>Su carnet es: ${carnet}</p><p>Su nombre es: ${nombre}</p>`;
                 
-
-                    console.log(`carnet: ${carnet}, nombre: ${nombre}`);
-
-                    alert("Su carnet es: " + carnet + " y su nombre es: "+ nombre);
-                    
+                    window.addEventListener('beforeunload', (event) => {
+                    event.preventDefault();
                     });
+                }
+            </script>
 
-                
-                    </script>
-                        </div>
-                      </form>
-                  </form>
-            </section>
         </main>
     </div>
 </body>
