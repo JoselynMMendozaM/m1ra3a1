@@ -1,33 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contar repeticiones de una palabra</title>
 </head>
-<body class="container-fluid">
-
-    <h1>Contador de palabra repetida dentro del texto.</h1>
-    <p>Introduce un texto:</p>
-    <input type="text" id="txt" placeholder="Ingresar texto">
-    <p>Introduce una palabra:</p>
-    <input type="text" id="palabra" placeholder="Ingresar palabra">
-
-    <button onclick="cont_palabra()">Contar palabra</button>
-
-    
+<body>
+    <h1>Contar repeticiones de una palabra</h1>
+    <form onsubmit="contarRepeticiones(event)">
+        <label for="texto">Texto:</label>
+        <br>
+        <textarea id="texto" name="texto" required></textarea>
+        <br>
+        <label for="palabra">Palabra:</label>
+        <br>
+        <input type="text" id="palabra" name="palabra" required>
+        <br>
+        <br>
+        <button type="submit">Contar repeticiones</button>
+    </form>
+    <br>
     <div id="resultado"></div>
 
     <script>
+        function contarRepeticiones(event) {
+    event.preventDefault();
 
-        function cont_palabra(){
-            
-            const txt = document.getElementById('txt').value;
-            const palabra = document.getElementById('palabra').value;
-        }
-        
-        for
+    // Obtener el valor del textarea y el input
+    const texto = document.getElementById("texto").value;
+    const palabra = document.getElementById("palabra").value.toLowerCase();
+
+    // Convertir el texto a minúsculas para facilitar la comparación
+    const textoMinusculas = texto.toLowerCase();
+
+    // Contar las repeticiones de la palabra
+    let repeticiones = 0;
+    let indice = textoMinusculas.indexOf(palabra);
+    while (indice !== -1) {
+        repeticiones++;
+        indice = textoMinusculas.indexOf(palabra, indice + palabra.length);
+    }
+
+    // Mostrar el resultado
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = `La palabra "${palabra}" se repite **${repeticiones}** veces en el texto.`;
+}
+
     </script>
-
 </body>
 </html>

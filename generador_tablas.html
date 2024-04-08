@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear tabla dinámica</title>
+</head>
+<body>
+    <h1>Crear tabla dinámica</h1>
+    <form onsubmit="crearTabla(event)">
+        <label for="filas">Filas:</label>
+        <br>
+        <input type="number" id="filas" name="filas" required>
+        <br>
+        <label for="columnas">Columnas:</label>
+        <br>
+        <input type="number" id="columnas" name="columnas" required>
+        <br>
+        <br>
+        <button type="submit">Crear tabla</button>
+    </form>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+       function crearTabla(event) {
+            event.preventDefault();
+
+            // Obtener el valor de los inputs
+            const filas = parseInt(document.getElementById("filas").value);
+            const columnas = parseInt(document.getElementById("columnas").value);
+
+            // Validar los valores
+            if (isNaN(filas) || filas <= 0) {
+                alert("Ingrese un número positivo mayor a cero para las filas.");
+                return;
+            }
+
+            if (isNaN(columnas) || columnas <= 0) {
+                alert("Ingrese un número positivo mayor a cero para las columnas.");
+                return;
+            }
+
+            // Crear la tabla
+            let tabla = `<table>`;
+            for (let i = 0; i < filas; i++) {
+                tabla += `<tr>`;
+                for (let j = 0; j < columnas; j++) {
+                    tabla += `<td></td>`;
+                }
+                tabla += `</tr>`;
+            }
+            tabla += `</table>`;
+
+            // Agregar estilo a la tabla
+            tabla = tabla.replace(/<table>/g, `<table style="border-collapse: collapse;">`);
+            tabla = tabla.replace(/<td>/g, `<td style="border: 5px solid black; width: 50px; height: 50px;">`);
+
+            // Mostrar la tabla en el elemento resultado
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = tabla;
+        }
+
+    </script>
+</body>
+</html>

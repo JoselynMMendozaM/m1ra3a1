@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar números continuos</title>
+</head>
+<body>
+    <h1>Mostrar números continuos</h1>
+    <form onsubmit="mostrarNumeros(event)">
+        <label for="numero">Número:</label>
+        <br>
+        <input type="number" id="numero" name="numero" required>
+        <br>
+        <br>
+        <button type="submit">Mostrar números</button>
+    </form>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarNumeros(event) {
+            event.preventDefault();
+
+            // Obtener el valor del input
+            const numero = parseInt(document.getElementById("numero").value);
+
+            // Validar el valor
+            if (isNaN(numero) || numero <= 0) {
+                alert("Ingrese un número positivo mayor a cero.");
+                return;
+            }
+
+            // Mostrar los números
+            let mensaje = "";
+            for (let i = 1; i <= numero; i++) {
+                mensaje += `${i} `;
+            }
+
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = mensaje;
+        }
+
+    </script>
+</body>
+</html>

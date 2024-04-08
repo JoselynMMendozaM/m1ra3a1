@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mostrar caracteres de dos en dos</title>
 </head>
-<body class="container-fluid">
-    
-    <h1>Ordenar texto en caracteres de dos en dos</h1>
-    <p>Introduce un texto:</p>
-    <input type="text" id="txt" placeholder="Ingresar texto">
-
-    <button onclick="ordenar_dos_en_dos()">Ordenar</button>
-
-    
+<body>
+    <h1>Mostrar caracteres de dos en dos</h1>
+    <form onsubmit="mostrarCaracteres(event)">
+        <label for="texto">Texto:</label>
+        <input type="text" id="texto" name="texto" required>
+        <br>
+        <br>
+        <button type="submit">Mostrar caracteres</button>
+    </form>
+    <br>
     <div id="resultado"></div>
 
     <script>
+        function mostrarCaracteres(event) {
+            event.preventDefault();
 
-        function ordenar_dos_en_dos(){
+            // Obtener el valor del input
+            const texto = document.getElementById("texto").value;
 
-            const txt = document.getElementById('txt').value;
+            // Obtener el elemento donde se mostrará el resultado
+            const resultado = document.getElementById("resultado");
 
+            // Mostrar los caracteres de dos en dos
+            let mensaje = "";
+            for (let i = 0; i < texto.length; i += 2) {
+                mensaje += `${texto[i]}${texto[i + 1] ? " - " : ""}`;
+            }
+
+            resultado.innerHTML = mensaje;
         }
 
     </script>
-
 </body>
 </html>

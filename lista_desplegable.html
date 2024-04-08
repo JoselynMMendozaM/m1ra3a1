@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información sobre una palabra</title>
+</head>
+<body>
+    <h1>Información sobre una palabra</h1>
+    <select id="palabras">
+        <option value="">-- Seleccione una palabra --</option>
+        <option value="casa">Casa</option>
+        <option value="perro">Perro</option>
+        <option value="computadora">Computadora</option>
+    </select>
+    <br>
+    <br>
+    <button id="primer-digito">Primer dígito</button>
+    <button id="ultimo-digito">Último dígito</button>
+    <button id="caracteres">Caracteres</button>
+    <br>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+        const palabras = {
+            casa: {
+                primerDigito: "c",
+                ultimoDigito: "a",
+                caracteres: ["c", "a", "s", "a"]
+            },
+            perro: {
+                primerDigito: "p",
+                ultimoDigito: "o",
+                caracteres: ["p", "e", "r", "r", "o"]
+            },
+            computadora: {
+                primerDigito: "c",
+                ultimoDigito: "a",
+                caracteres: ["c", "o", "m", "p", "u", "t", "a", "d", "o", "r", "a"]
+            }
+        };
+
+        function mostrarInformacion(palabra) {
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = "";
+
+            if (palabra === "") {
+                return;
+            }
+
+            const infoPalabra = palabras[palabra];
+
+            // Mostrar primer dígito
+            document.getElementById("primer-digito").addEventListener("click", () => {
+                resultado.innerHTML = `
+                    <h3>Primer dígito</h3>
+                    <p>${infoPalabra.primerDigito}</p>
+                `;
+            });
+
+            // Mostrar último dígito
+            document.getElementById("ultimo-digito").addEventListener("click", () => {
+                resultado.innerHTML = `
+                    <h3>Último dígito</h3>
+                    <p>${infoPalabra.ultimoDigito}</p>
+                `;
+            });
+
+            // Mostrar caracteres
+            document.getElementById("caracteres").addEventListener("click", () => {
+                resultado.innerHTML = `
+                    <h3>Caracteres</h3>
+                    <table>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Caracter</th>
+                        </tr>
+                        ${infoPalabra.caracteres.map((caracter, i) => `
+                            <tr>
+                                <td>${i + 1}</td>
+                                <td>${caracter}</td>
+                            </tr>
+                        `).join("")}
+                    </table>
+                `;
+            });
+        }
+
+        // Mostrar información al seleccionar una palabra
+        document.getElementById("palabras").addEventListener("change", () => {
+            const palabraSeleccionada = document.getElementById("palabras").value;
+            mostrarInformacion(palabraSeleccionada);
+        });
+
+        // Mostrar información al cargar la página
+        mostrarInformacion("");
+
+    </script>
+</body>
+</html>
