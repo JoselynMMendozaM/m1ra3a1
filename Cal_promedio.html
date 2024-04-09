@@ -3,63 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
     <title>Calcular promedio</title>
 </head>
-<body class="container-fluid text-uppercase">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<body class="container-fluid text-uppercase text-warning">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <h1>Calcular promedio</h1>
-    <form>
+    <form class="border border-warning">
         <div class="mb-3">
           <label for="name" class="form-label">Nombre:</label>
-          <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Ingresar nombre">
+          <input type="text" class="form-control rounded-pill" id="name" placeholder="Ingresar nombre">
         </div>
         <div class="mb-3">
           <label for="curso" class="form-label">Curso:</label>
-          <input type="text" class="form-control rounded-pill" id="catetoB" placeholder="Cateto b">
+          <input type="text" class="form-control rounded-pill" id="curso" placeholder="Ingresar curso">
         </div>
         <div class="mb-3">
-            <label for="name" class="form-label">Nombre:</label>
-            <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Ingresar nombre">
+            <label for="not_1" class="form-label">Nota 1:</label>
+            <input type="number" class="form-control rounded-pill" id="nota-1" placeholder="Ingresar primera nota">
           </div>
           <div class="mb-3">
-            <label for="name" class="form-label">Nombre:</label>
-            <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Ingresar nombre">
+            <label for="name" class="form-label">Nota 2:</label>
+            <input type="number" class="form-control rounded-pill" id="nota-2" placeholder="Ingresar segunda nota">
           </div>
           <div class="mb-3">
-            <label for="name" class="form-label">Nombre:</label>
-            <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Ingresar nombre">
+            <label for="name" class="form-label">Nota 3:</label>
+            <input type="number" class="form-control rounded-pill" id="nota-3" placeholder="Ingresar tercera nota">
           </div>
           <div class="mb-3">
-            <label for="name" class="form-label">Nombre:</label>
-            <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Ingresar nombre">
+            <label for="name" class="form-label">Nota 4:</label>
+            <input type="number" class="form-control rounded-pill" id="nota-4" placeholder="Ingresar cuarta nota">
           </div>
           <div class="mb-3">
-            <label for="name" class="form-label">Nombre:</label>
-            <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Ingresar nombre">
+            <label for="name" class="form-label">Nota 5:</label>
+            <input type="number" class="form-control rounded-pill" id="nota-5" placeholder="Ingresar quinta nota">
           </div>
-        <button onclick="calcularHipotenusa(); event.preventDefault();" type="submit" class="btn btn-primary rounded-pill mb-3 form-control">Mostrar datos</button>
+          <div class="py-3">
+            <button onclick="calcularPromedio(); event.preventDefault();" type="submit" class="btn btn-primary rounded-pill mb-3 form-control">Mostrar datos</button>
+          </div>
       </form>
-    <form action="">
-        <p>Introduce tus datos:</p>
-        <input type="text" id="curso" placeholder="Curso">
-        <input type="number" id="nota-1" placeholder="Nota 1">
-        <input type="number" id="nota-2" placeholder="Nota 2">
-        <input type="number" id="nota-3" placeholder="Nota 3">
-        <input type="number" id="nota-4" placeholder="Nota 4">
-        <input type="number" id="nota-5" placeholder="Nota 5">
-        <button onclick="calcularPromedio()">Calcular promedio</button>
-    </form>
-
+    
     <div id="resultado"></div>
 
     <script>
         function calcularPromedio() {
     
-    const nombre = document.getElementById('nombre').value;
+    const name = document.getElementById('name').value;
     const curso = document.getElementById('curso').value;
     const nota1 = document.getElementById('nota-1').value;
     const nota2 = document.getElementById('nota-2').value;
@@ -71,7 +62,7 @@
     const promedio = (Number(nota1) + Number(nota2) + Number(nota3) + Number(nota4) + Number(nota5)) / 5;
 
     
-    alert(`Curso: ${curso}\nNombre: ${nombre}\nPromedio: ${promedio}`);
+    alert(`Curso: ${curso}\nNombre: ${name}\nPromedio: ${promedio}`);
 }
 
     </script>

@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="js/ejemplo.js"></script>
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="hipotenusa.css">
     <title>Document</title>
     <script>
     
@@ -17,42 +17,51 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <div class="container-fluid text-uppercase">
+    <div class="container-fluid text-uppercase text-warning">
       <header class="container-fluid">
         <img src="img/banner-java.jpg" class="img-fluid" alt="">
       </header>
-        <main class="p-4">
+        <main  class="container-fluid p-4">
           <h1>Calcular la Hipotenusa</h1>
-          <form>
+
+          <form class="border border-warning">
             <div class="mb-3">
-              <label for="catetoA" class="form-label">Ingrese el cateto a:</label>
-              <input type="number" class="form-control rounded-pill" id="catetoA" placeholder="Cateto a">
+              <label for="catA" class="form-label">Ingrese el cateto a:</label>
+              <input type="number" class="form-control " id="catA" placeholder="Cateto a">
             </div>
             <div class="mb-3">
-              <label for="catetoB" class="form-label">Ingrese el cateto b:</label>
-              <input type="number" class="form-control rounded-pill" id="catetoB" placeholder="Cateto b">
+              <label for="catB" class="form-label">Ingrese el cateto b:</label>
+              <input type="number" class="form-control " id="catB" placeholder="Cateto b">
             </div>
-            <button onclick="calcularHipotenusa(); event.preventDefault();" type="submit" class="btn btn-primary rounded-pill mb-3 form-control">Mostrar datos</button>
+            <button onclick="calcularHipotenusa(); event.preventDefault();" type="submit" class="btn btn-primary mb-3 form-control">Mostrar datos</button>
           </form>
       
-          <p id="datos" class="p-4">
-          </p>
+          <div class="col text-center p-5" id="resultHipotenusa">
+          </div>
+  </div>
           <script>
             function calcularHipotenusa() {
               
-              const catetoA = document.getElementById('catetoA').value;
-              const catetoB = document.getElementById('catetoB').value;
+              const catA = document.getElementById('catA').value;
+              const catB = document.getElementById('catB').value;
       
               
-              const hipotenusa = Math.sqrt(catetoA**2 + catetoB**2);
+              const hipotenusa = Math.sqrt(catA**2 + catB**2);
       
               alert(`La hipotenusa es: ${hipotenusa}`);
 
                    
                 console.log(`La hipotenusa es: ${hipotenusa}`);
 
-              const datosDiv = document.getElementById('datos');
-              datosDiv.innerHTML = `<h2>La hipotenusa es: ${hipotenusa}</h2>`;
+              const resultHipotenusaDiv = document.getElementById('resultHipotenusa');
+              resultHipotenusaDiv .innerHTML = `La hipotenusa es: ${hipotenusa}`;
+              resultHipotenusaDiv .innerHTML =
+              `<h2>La hipotenusa es: ${hipotenusa}</h2>
+              <div class="triangulo">
+                  <div class="hipotenusa">${hipotenusa}</div>
+                  <div class="catA">${catA}</div>
+                  <div class="catB">${catB}</div>
+              </div>`;
             }
           </script>
         </main>

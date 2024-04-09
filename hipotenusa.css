@@ -1,0 +1,36 @@
+.triangulo {
+    margin: auto;
+    margin-top: 20px;
+    width: 0;
+    height: 0;
+    border-right: 80px solid transparent;
+    border-top: 80px solid transparent;
+    border-left: 80px solid #f0ad4e;
+    border-bottom: 80px solid #f0ad4e;
+}
+
+.hipotenusa {
+    position: relative;
+    top: -15px;
+    left: -10px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(196, 24, 24);
+}
+.catA {
+    position: relative;
+    top: -35px;
+    left: -140px;
+    width: 70px;
+    font-weight: bold;
+    
+}
+.catB {
+    position: relative;
+    top: 40px;
+    left: -35px;
+    width: 70px;
+    font-weight: bold;
+
+}

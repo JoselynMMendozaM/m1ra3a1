@@ -12,23 +12,23 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <div class="container-fluid text-uppercase">
+    <div class="container-fluid text-uppercase text-warning">
         <header class="container-fluid">
             <img src="img/banner-java.jpg" class="img-fluid" alt="">
         </header>
         <main class="container p-4">
             <h1>Ingreso de Datos</h1>
             
-            <form>
+            <form class="border border-warning">
                 <div class="mb-3">
                   <label for="carnet" class="form-label">Carnet:</label>
                   <input type="number" class="form-control rounded-pill" id="carnet" placeholder="Carnet">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 py-2">
                     <label for="nombre" class="form-label">Nombre:</label>
                     <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Nombre">
                 </div>
-                <button onclick="mostrarDatos()" type="submit" class="btn btn-outline-primary mb-3 form-control rounded-pill">Mostrar datos</button>
+                <button onclick="mostrarDatos()" type="submit" class="btn btn-outline-warning mb-3 form-control rounded-pill p-2">Mostrar datos</button>
             </form>
             <p id="datos">
             </p>
