@@ -3,37 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Contar repeticiones de una palabra</title>
 </head>
-<body>
-    <h1>Contar repeticiones de una palabra</h1>
-    <form onsubmit="contarRepeticiones(event)">
-        <label for="texto">Texto:</label>
-        <br>
-        <textarea id="texto" name="texto" required></textarea>
-        <br>
-        <label for="palabra">Palabra:</label>
-        <br>
-        <input type="text" id="palabra" name="palabra" required>
-        <br>
-        <br>
-        <button type="submit">Contar repeticiones</button>
-    </form>
-    <br>
-    <div id="resultado"></div>
+<body class="container-fluid text-uppercase text-warning">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <header class="container-fluid">
+        <img src="img/banner-java.jpg" class="img-fluid" alt="">
+    </header>
+
+    <h1 class="p-4">Contar repeticiones de una palabra</h1>
+    <div class="pb-5">
+        <form id="form-text" onsubmit="contarRepeticiones(event)" class="border border-warning p-3">
+            <label for="texto" class="pb-3">Texto:</label>
+            <br>
+            <textarea id="texto" name="texto" class="form-control " placeholder="Ingrese un texto" required></textarea>
+            <br>
+            <label for="palabra" class="pb-3">Palabra:</label>
+            <br>
+            <input type="text" id="palabra" name="palabra" class="form-control rounded-pill" placeholder="Ingrese una palabra" required>
+            <br>
+            <button type="submit" class="btn btn-outline-warning form-control rounded-pill">Contar repeticiones</button>
+            <div id="resultado" class="p-3"></div>
+        </form>
+
+    </div>
+  
 
     <script>
+        const textarea = document.getElementById('texto');
+
+        function ajustarAltura() {
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        textarea.addEventListener('input', ajustarAltura);
+
+        ajustarAltura(); 
+
         function contarRepeticiones(event) {
     event.preventDefault();
 
-    // Obtener el valor del textarea y el input
     const texto = document.getElementById("texto").value;
     const palabra = document.getElementById("palabra").value.toLowerCase();
 
-    // Convertir el texto a minúsculas para facilitar la comparación
     const textoMinusculas = texto.toLowerCase();
 
-    // Contar las repeticiones de la palabra
     let repeticiones = 0;
     let indice = textoMinusculas.indexOf(palabra);
     while (indice !== -1) {
@@ -41,9 +60,8 @@
         indice = textoMinusculas.indexOf(palabra, indice + palabra.length);
     }
 
-    // Mostrar el resultado
     const resultado = document.getElementById("resultado");
-    resultado.innerHTML = `La palabra "${palabra}" se repite **${repeticiones}** veces en el texto.`;
+    resultado.innerHTML = `<h2 class="text-center">La palabra "${palabra}" se repite **${repeticiones}** veces en el texto.</h2>`;
 }
 
     </script>

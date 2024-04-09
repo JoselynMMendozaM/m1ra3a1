@@ -33,7 +33,7 @@
               <label for="catB" class="form-label">Ingrese el cateto b:</label>
               <input type="number" class="form-control " id="catB" placeholder="Cateto b">
             </div>
-            <button onclick="calcularHipotenusa(); event.preventDefault();" type="submit" class="btn btn-primary mb-3 form-control">Mostrar datos</button>
+            <button onclick="calcularHipotenusa(); event.preventDefault();" type="submit" class="btn btn-outline-warning mb-3 form-control">Mostrar datos</button>
           </form>
       
           <div class="col text-center p-5" id="resultHipotenusa">
@@ -58,12 +58,14 @@
               resultHipotenusaDiv .innerHTML =
               `<h2>La hipotenusa es: ${hipotenusa}</h2>
               <div class="triangulo">
-                  <div class="hipotenusa">${hipotenusa}</div>
-                  <div class="catA">${catA}</div>
-                  <div class="catB">${catB}</div>
+                  <div class="hipotenusa"><h2>${hipotenusa}</h2></div>
+                  <div class="catA"><h2>${catA}</h2></div>
+                  <div class="catB"><h2>${catB}</h2></div>
               </div>`;
             }
+
           </script>
+          <br>
         </main>
       </div>
 </body>

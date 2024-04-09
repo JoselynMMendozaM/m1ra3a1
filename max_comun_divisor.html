@@ -3,43 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Máximo común divisor</title>
 </head>
-<body>
-    <h1>Máximo común divisor</h1>
-    <form onsubmit="mostrarMCD(event)">
-        <label for="numero1">Primer número:</label>
-        <input type="number" id="numero1" name="numero1" required>
+<body class="container-fluid text-uppercase text-warning">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <header class="container-fluid">
+        <img src="img/banner-java.jpg" class="img-fluid" alt="">
+    </header>
+
+    <h1 class="p-4">Máximo común divisor</h1>
+    <form onsubmit="mostrarMCD(event)" class="border border-warning">
+        <label for="num1 pb-4">Primer número:</label>
+        <input type="number" id="num1" name="num1" class="form-control rounded-pill" required>
         <br>
-        <label for="numero2">Segundo número:</label>
-        <input type="number" id="numero2" name="numero2" required>
+        <label for="num2">Segundo número:</label>
+        <input type="number" id="num2" name="num2" class="form-control rounded-pill" required>
         <br>
-        <br>
-        <button type="submit">Calcular MCD</button>
+        
+        <button type="submit" class="btn btn-outline-warning form-control rounded-pill">Calcular MCD</button>
     </form>
     <br>
-    <div id="resultado"></div>
+    <div id="resultado" class="text-center"></div>
 
     <script>
         function mostrarMCD(event) {
     event.preventDefault();
 
-    // Obtener los valores de los inputs
-    const numero1 = parseInt(document.getElementById("numero1").value);
-    const numero2 = parseInt(document.getElementById("numero2").value);
+    const num1 = parseInt(document.getElementById("num1").value);
+    const num2 = parseInt(document.getElementById("num2").value);
 
-    // Calcular el MCD
-    const mcd = calcularMCD(numero1, numero2);
+    const mcd = calcularMCD(num1, num2);
 
-    // Mostrar el MCD en el cuerpo de la página
     const resultado = document.getElementById("resultado");
-    resultado.innerHTML = `El MCD de ${numero1} y ${numero2} es ${mcd}`;
+    resultado.innerHTML = `<h2>El MCD de ${num1} y ${num2} es ${mcd}</h2>`;
 
-    // Mostrar el MCD en una ventana de alerta
-    alert(`El MCD de ${numero1} y ${numero2} es ${mcd}`);
+    alert(`El MCD de ${num1} y ${num2} es ${mcd}`);
 
-    // Mostrar el MCD en la consola
-    console.log(`El MCD de ${numero1} y ${numero2} es ${mcd}`);
+ 
+    console.log(`El MCD de ${num1} y ${num2} es ${mcd}`);
 }
 
 function calcularMCD(a, b) {

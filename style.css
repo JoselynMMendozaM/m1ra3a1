@@ -13,5 +13,14 @@ form{
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px  rgba(0, 0, 0, .2);
 }
+
+#form-text{
+    width: 75%;
+    
+}
+
+textarea{
+    width: 300px;
+}
     
 
