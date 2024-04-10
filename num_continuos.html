@@ -25,9 +25,10 @@
         <br>
         <br>
         <button type="submit" class="btn btn-outline-warning form-control rounded-pill">Mostrar números</button>
+        
+        <div id="resultado_num" class="p-4"></div>
     </form>
     <br>
-    <div id="resultado_num" class=" p-4"></div>
 
     <script> 
 
@@ -48,7 +49,7 @@
             }
 
             const resultado_num = document.getElementById("resultado_num");
-            resultado_num.innerHTML = numeros;
+            resultado_num.innerHTML =`<h2>los números del 1 al ${num} son: <br> ${numeros}</h2>`;
         }
 
     </script>

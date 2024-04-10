@@ -6,17 +6,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="js/ejemplo.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Mostrar Datos</title>
     
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <header>
+        <img src="img/banner-java.jpg" class="img-fluid" alt="">
+    </header>
 
     <div class="container-fluid text-uppercase text-warning">
-        <header class="container-fluid">
-            <img src="img/banner-java.jpg" class="img-fluid" alt="">
-        </header>
-        <main class="container p-4">
+        <main class="container-fluid py-4">
             <h1>Ingreso de Datos</h1>
             
             <form class="border border-warning">
@@ -28,13 +29,14 @@
                     <label for="nombre" class="form-label">Nombre:</label>
                     <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Nombre">
                 </div>
-                <button onclick="mostrarDatos()" type="submit" class="btn btn-outline-warning  mb-3 form-control rounded-pill p-2">Mostrar datos</button>
+                <button onclick="mostrarDatos(event)" type="submit" class="btn btn-outline-warning  mb-3 form-control rounded-pill p-2">Mostrar datos</button>
+                
+                <div id="datos" class="py-4">
+                </div>
             </form>
-            <p id="datos">
-            </p>
             <script>
-                function mostrarDatos() {
-                    
+                function mostrarDatos(event) {
+                    event.preventDefault();
                     
                     const carnet = document.getElementById('carnet').value;
                     const nombre = document.getElementById('nombre').value;
@@ -48,11 +50,7 @@
 
                     
                     const datosDiv = document.getElementById('datos');
-                    datosDiv.innerHTML = `<h2>Datos</h2><p>Su carnet es: ${carnet}</p><p>Su nombre es: ${nombre}</p>`;
-                
-                    window.addEventListener('beforeunload', (event) => {
-                    event.preventDefault();
-                    });
+                    datosDiv.innerHTML = `<h2>Datos</h2><h4>Su carnet es: ${carnet}</h4><h4>Su nombre es: ${nombre}</h4>`;
                 }
             </script>
 

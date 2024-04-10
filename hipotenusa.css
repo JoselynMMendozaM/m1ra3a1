@@ -12,7 +12,7 @@
 .hipotenusa {
     position: relative;
     top: -24px;
-    left: 20px;
+    left: 80px;
     width: 100px;
     text-align: center;
     font-weight: bold;
@@ -21,14 +21,14 @@
 .catA {
     position: relative;
     top: -65px;
-    left: -170px;
+    left: -250px;
     width: 70px;
     font-weight: bold;
     
 }
 .catB {
     position: relative;
-    top: 10px;
+    top: 20px;
     left: -35px;
     width: 60px;
     font-weight: bold;

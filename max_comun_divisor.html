@@ -7,55 +7,58 @@
     <link rel="stylesheet" href="style.css">
     <title>Máximo común divisor</title>
 </head>
-<body class="container-fluid text-uppercase text-warning">
+<body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
-    <header class="container-fluid">
+    <header>
         <img src="img/banner-java.jpg" class="img-fluid" alt="">
     </header>
 
-    <h1 class="p-4">Máximo común divisor</h1>
-    <form onsubmit="mostrarMCD(event)" class="border border-warning">
-        <label for="num1 pb-4">Primer número:</label>
-        <input type="number" id="num1" name="num1" class="form-control rounded-pill" required>
-        <br>
-        <label for="num2">Segundo número:</label>
-        <input type="number" id="num2" name="num2" class="form-control rounded-pill" required>
-        <br>
+    <div  class="container-fluid text-uppercase text-warning">
+            <h1 class="p-4">Máximo común divisor</h1>
+            <form onsubmit="mostrarMCD(event)" class="border border-warning">
+                <label class="pb-4" for="num1">Primer número:</label>
+                <input type="number" id="num1" name="num1" class="form-control rounded-pill" required>
+                <br>
+                <label class="pb-4" for="num2">Segundo número:</label>
+                <input type="number" id="num2" name="num2" class="form-control rounded-pill" required>
+                <br>
+                
+                <button type="submit" class="btn btn-outline-warning form-control rounded-pill">Calcular MCD</button>
+                
+                <div id="resultado" class="text-center"></div>
+            </form>
+
+            <script>
+                function mostrarMCD(event) {
+            event.preventDefault();
+
+            const num1 = parseInt(document.getElementById("num1").value);
+            const num2 = parseInt(document.getElementById("num2").value);
+
+            const mcd = calcularMCD(num1, num2);
+
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = `<h2>El MCD de ${num1} y ${num2} es: ${mcd}</h2>`;
+
+            alert(`El MCD de ${num1} y ${num2} es: ${mcd}`);
+
         
-        <button type="submit" class="btn btn-outline-warning form-control rounded-pill">Calcular MCD</button>
-    </form>
-    <br>
-    <div id="resultado" class="text-center"></div>
+            console.log(`El MCD de ${num1} y ${num2} es: ${mcd}`);
+        }
 
-    <script>
-        function mostrarMCD(event) {
-    event.preventDefault();
+        function calcularMCD(a, b) {
+            while (b !== 0) {
+                let t = a % b;
+                a = b;
+                b = t;
+            }
+            return a;
+        }
 
-    const num1 = parseInt(document.getElementById("num1").value);
-    const num2 = parseInt(document.getElementById("num2").value);
+            </script>
 
-    const mcd = calcularMCD(num1, num2);
-
-    const resultado = document.getElementById("resultado");
-    resultado.innerHTML = `<h2>El MCD de ${num1} y ${num2} es ${mcd}</h2>`;
-
-    alert(`El MCD de ${num1} y ${num2} es ${mcd}`);
-
- 
-    console.log(`El MCD de ${num1} y ${num2} es ${mcd}`);
-}
-
-function calcularMCD(a, b) {
-    while (b !== 0) {
-        let t = a % b;
-        a = b;
-        b = t;
-    }
-    return a;
-}
-
-    </script>
+    </div>
 </body>
 </html>

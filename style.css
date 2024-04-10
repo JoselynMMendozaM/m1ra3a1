@@ -12,6 +12,7 @@ form{
     border-radius: 40px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px  rgba(0, 0, 0, .2);
+    background-color:rgba(99, 97, 97, 0.199);
 }
 
 #form-text{
@@ -28,17 +29,22 @@ form{
 
 #tb-repuesta{
     margin: auto;
-}
-#tb2-resultado{
-    margin: auto;
     
 }
 
-table{
+#resultado-vocales{
+    max-width: 50%;
     margin: auto;
-    
+    padding: 20px;
 }
 
+#btn-enlace{
+    text-transform: uppercase;
+}
 
+#btn-listaDesplegable{
+    margin: auto;
+    text-align: center;
+}
     
 

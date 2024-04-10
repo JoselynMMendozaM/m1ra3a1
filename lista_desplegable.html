@@ -26,10 +26,16 @@
             <option value="perro">Perro</option>
             <option value="computadora">Computadora</option>
         </select>
-        <section class="pt-4 text-center">
-            <button onclick="event.preventDefault()" id="primer-digito" class="btn btn-outline-warning  rounded-pill">Primer dígito</button>
-            <button onclick="event.preventDefault()" id="ultimo-digito" class="btn btn-outline-warning  rounded-pill">Último dígito</button>
-            <button onclick="event.preventDefault()" id="caracteres" class="btn btn-outline-warning  rounded-pill">Caracteres</button>
+        <section id="btn-listaDesplegable" class="row pt-4 text-center">
+            <div class="col-xl-3  col-12 mb-3">
+                <button onclick="event.preventDefault()" id="primer-digito" class="btn btn-outline-warning  rounded-pill">Primer dígito</button>
+            </div>
+            <div class="col-xl-3  col-12 mb-3">
+                <button onclick="event.preventDefault()" id="ultimo-digito" class="btn btn-outline-warning  rounded-pill">Último dígito</button>
+            </div>
+            <div class="col-xl-3  col-12 mb-3">
+                <button onclick="event.preventDefault()" id="caracteres" class="btn btn-outline-warning  rounded-pill">Caracteres</button>
+            </div>
 
         </section>
         
@@ -84,7 +90,7 @@
                     document.getElementById("caracteres").addEventListener("click", () => {
                         resultado.innerHTML = `
                             <h3>Caracteres</h3>
-                            <table id="tb-repuesta">
+                            <table class="table table-bordered border-warning p-4 text-light text-center table-hover table-dark table-striped" id="tb-repuesta">
                                 <tr>
                                     <th class="px-4">Posición</th>
                                     <th>Caracter</th>
