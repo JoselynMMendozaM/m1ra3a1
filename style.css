@@ -4,7 +4,7 @@ body{
    
 }
 form{
-    width: 350px;
+    max-width: 75%;
     background-attachment: fixed;
     padding: 30px;
     margin: auto;
@@ -19,8 +19,26 @@ form{
     
 }
 
-textarea{
-    width: 300px;
+#resultado_num{
+    width:65%;
+    font-size: larger;
+    margin: auto;
+    
 }
+
+#tb-repuesta{
+    margin: auto;
+}
+#tb2-resultado{
+    margin: auto;
+    
+}
+
+table{
+    margin: auto;
+    
+}
+
+
     
 

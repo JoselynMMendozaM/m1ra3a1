@@ -3,64 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Crear tabla dinámica</title>
 </head>
 <body>
-    <h1>Crear tabla dinámica</h1>
-    <form onsubmit="crearTabla(event)">
-        <label for="filas">Filas:</label>
-        <br>
-        <input type="number" id="filas" name="filas" required>
-        <br>
-        <label for="columnas">Columnas:</label>
-        <br>
-        <input type="number" id="columnas" name="columnas" required>
-        <br>
-        <br>
-        <button type="submit">Crear tabla</button>
-    </form>
-    <br>
-    <div id="resultado"></div>
 
-    <script>
-       function crearTabla(event) {
-            event.preventDefault();
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-            // Obtener el valor de los inputs
-            const filas = parseInt(document.getElementById("filas").value);
-            const columnas = parseInt(document.getElementById("columnas").value);
 
-            // Validar los valores
-            if (isNaN(filas) || filas <= 0) {
-                alert("Ingrese un número positivo mayor a cero para las filas.");
-                return;
+    <header>
+        <img src="img/banner-java.jpg" class="img-fluid" alt="">
+    </header>
+
+    <div class="container-fluid text-uppercase text-warning p-4">
+        <h1>Crear tabla dinámica</h1>
+        <form onsubmit="crearTabla(event)" class="border border-warning">
+            <label for="filas" class="pb-3" >Ingresar número de Filas:</label>
+            <input type="number" id="filas" name="filas" class="form-control rounded-pill " placeholder="Ingrese un número" required>
+            <label for="columnas" class="py-3">Ingresar número de Columnas:</label>
+            <input type="number" id="columnas" name="columnas" class="form-control rounded-pill " placeholder="Ingrese un número" required>
+            <br>
+            <button type="submit" class="btn btn-outline-warning form-control rounded-pill">Crear tabla</button>
+        </form>
+        <br>
+        <div id="tb2-resultado" class="p-4 container"></div>
+
+        <script>
+            function crearTabla(event) {
+                    event.preventDefault();
+
+                    
+                    const filas = parseInt(document.getElementById("filas").value);
+                    const columnas = parseInt(document.getElementById("columnas").value);
+
+                    // Validar los valores
+                    if (isNaN(filas) || filas <= 0) {
+                        alert("Ingrese un número positivo mayor a cero para las filas.");
+                        return;
+                    }
+
+                    if (isNaN(columnas) || columnas <= 0) {
+                        alert("Ingrese un número positivo mayor a cero para las columnas.");
+                        return;
+                    }
+
+                    // Crear la tabla
+                    let tabla = `<table>`;
+                    for (let i = 0; i < filas; i++) {
+                        tabla += `<tr>`;
+                        for (let j = 0; j < columnas; j++) {
+                            tabla += `<td></td>`;
+                        }
+                        tabla += `</tr>`;
+                    }
+                    tabla += `</table>`;
+
+                    // Agregar estilo a la tabla
+                    tabla = tabla.replace(/<table">/g, `<table style="border-collapse: collapse;">`);
+                    tabla = tabla.replace(/<td>/g, `<td style="border: 5px solid white; width: 50px; height: 50px;">`);
+
+                    
+                    const resultado = document.getElementById("tb2-resultado");
+                    resultado.innerHTML = tabla;
             }
 
-            if (isNaN(columnas) || columnas <= 0) {
-                alert("Ingrese un número positivo mayor a cero para las columnas.");
-                return;
-            }
+        </script>
 
-            // Crear la tabla
-            let tabla = `<table>`;
-            for (let i = 0; i < filas; i++) {
-                tabla += `<tr>`;
-                for (let j = 0; j < columnas; j++) {
-                    tabla += `<td></td>`;
-                }
-                tabla += `</tr>`;
-            }
-            tabla += `</table>`;
-
-            // Agregar estilo a la tabla
-            tabla = tabla.replace(/<table>/g, `<table style="border-collapse: collapse;">`);
-            tabla = tabla.replace(/<td>/g, `<td style="border: 5px solid black; width: 50px; height: 50px;">`);
-
-            // Mostrar la tabla en el elemento resultado
-            const resultado = document.getElementById("resultado");
-            resultado.innerHTML = tabla;
-        }
-
-    </script>
+    </div>
 </body>
 </html>
