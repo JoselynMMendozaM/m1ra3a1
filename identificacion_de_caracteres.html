@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/ejercicio-13.js"></script>
+    <title>IDENTIFICACION DE CARACTERES</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <header>
+        <img src="img/banner-java.jpg" class="img-fluid" alt="">
+    </header>
+
+    <main class="container-fluid text-uppercase text-warning">
+        <h1 class="p-4">Identificador de caracteres</h1>
+
+        <form action="" class="border border-warning"> 
+            <p>Texto No. 1:</p>
+            <textarea id="text-1" name="text-1" class="form-control" placeholder="Ingrese un texto" required></textarea>
+            <p class="pt-4">Texto No. 2:</p>
+            <textarea id="text-2" name="text-2" class="form-control" placeholder="Ingrese un texto" required></textarea>
+            
+            <section id="btn-listaDesplegable" class="row pt-4 text-center">
+                <div class="col-xl-3  col-12 mb-3">
+                    <button onclick="contarCaracteres(), event.preventDefault()" id="primer-digito" class="btn btn-outline-warning  rounded-pill">Cantidad de caracteres</button>
+                </div>
+                <div class="col-xl-3  col-12 mb-3">
+                    <button onclick="contarS(), event.preventDefault()" id="ultimo-digito" class="btn btn-outline-warning  rounded-pill">Contar el carácter S</button>
+                </div>
+                <div class="col-xl-3  col-12 mb-3">
+                    <button onclick="contarNumPares(), event.preventDefault()" id="caracteres" class="btn btn-outline-warning  rounded-pill">Contar digitos pares</button>
+                </div>
+    
+            </section>
+            <div id="resultado" class="text-center py-4"></div>
+        </form>
+
+    </main>
+</body>
+</html>

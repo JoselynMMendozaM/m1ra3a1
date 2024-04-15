@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="js/ejercicio-14.js"></script>
     <title>Contar vocales</title>
 </head>
 <body>
@@ -25,9 +26,9 @@
             <textarea id="texto" name="texto" class="form-control " placeholder="Ingrese un texto" required></textarea>
             <br>
             <button type="submit" class="btn btn-outline-warning form-control rounded-pill text-uppercase">Contar vocales</button>
+            <div class="pt-4" id="resultado-vocales"></div>
         </form>
         <br>
-        <div  id="resultado-vocales"></div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -42,33 +43,6 @@
             textarea.addEventListener('input', ajustarAltura);
 
             ajustarAltura();
-
-            function contarVocales(event) {
-                event.preventDefault();
-
-                const texto = document.getElementById("texto").value.toLowerCase();
-
-                const vocales = ["a", "e", "i", "o", "u"];
-                let conteoVocales = {};
-                for (const vocal of vocales) {
-                    conteoVocales[vocal] = 0;
-                    for (let i = 0; i < texto.length; i++) {
-                        if (texto[i] === vocal) {
-                            conteoVocales[vocal]++;
-                        }
-                    }
-                }
-
-                let tabla = `<table class="table table-bordered border-warning p-4 text-light text-center table-hover table-dark table-striped">`;
-                tabla += `<tr><th>Vocal</th><th>Cantidad</th></tr>`;
-                for (const vocal in conteoVocales) {
-                    tabla += `<tr><td class="px-4 ">${vocal}</td><td>${conteoVocales[vocal]}</td></tr>`;
-                }
-                tabla += `</table>`;
-
-                const resultado = document.getElementById("resultado-vocales");
-                resultado.innerHTML = tabla;
-            }
 
         </script>
 

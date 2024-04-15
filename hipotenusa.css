@@ -3,32 +3,42 @@
     margin-top: 20px;
     width: 0;
     height: 0;
-    border-right: 80px solid transparent;
-    border-top: 80px solid transparent;
-    border-left: 80px solid #f0ad4e;
-    border-bottom: 80px solid #f0ad4e;
+    top: 24px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid transparent;
+    border-left: 60px solid #f0ad4e;
+    border-bottom: 60px solid #f0ad4e;
+}
+.hipotenusa-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; 
 }
 
 .hipotenusa {
     position: relative;
-    top: -24px;
-    left: 80px;
+    top: -34px;
+    left: 10px;
     width: 100px;
     text-align: center;
     font-weight: bold;
+    transform: rotate(45deg);
     color: rgb(196, 24, 24);
+
 }
 .catA {
     position: relative;
-    top: -65px;
-    left: -250px;
+    top: -45px;
+    left: -150px;
     width: 70px;
+    transform: rotate(-90deg);
     font-weight: bold;
     
 }
 .catB {
     position: relative;
-    top: 20px;
+    top: 10px;
     left: -35px;
     width: 60px;
     font-weight: bold;

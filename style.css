@@ -32,11 +32,6 @@ form{
     
 }
 
-#resultado-vocales{
-    max-width: 50%;
-    margin: auto;
-    padding: 20px;
-}
 
 #btn-enlace{
     text-transform: uppercase;
@@ -46,5 +41,4 @@ form{
     margin: auto;
     text-align: center;
 }
-    
 

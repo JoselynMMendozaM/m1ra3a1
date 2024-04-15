@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="js/ejercicio-6.js"></script>
     <title>TABLA DE MULTIPLICAR</title>
 </head>
 <body>
@@ -25,42 +26,6 @@
             
             <div id="tabla" class="p-4 "></div>
         </form>
-
-
-        <script>
-            var num_0 = 0
-            var num_1 = 0
-            var num_2 = 0
-            var num_3 = 0
-            var num_4 = 0
-            var num_5 = 0
-            var num_6 = 0
-            var num_7 = 0
-            var num_8 = 0
-            var num_9 = 0
-            var num_10 = 0
-
-            function  mostrarTabla(){
-                const num = document.getElementById('num').value;
-                
-                num_0 = num * 0;
-                num_1 = num * 1;
-                num_2 = num * 2;
-                num_3 = num * 3;
-                num_4 = num * 4;
-                num_5 = num * 5;
-                num_6 = num * 6;
-                num_7 = num * 7;
-                num_8 = num * 8;
-                num_9 = num * 9;
-                num_10 = num * 10;
-
-                document.getElementById('tabla').innerHTML = `<h2>La tabla de multiplicas de ${num} :</h2><h4><br>${num} * 0 = ${num_0}.<br>${num} * 1 = ${num_1}.<br>${num} * 2 = ${num_2}.<br>${num} * 3 = ${num_3}.<br>${num} * 4 = ${num_4}.<br>${num} * 5 = ${num_5}.<br>${num} * 6 = ${num_6}.<br>${num} * 7 = ${num_7}.<br>${num} * 8 = ${num_8}.<br>${num} * 9 = ${num_9}.<br>${num} * 10 = ${num_10}</h4>`;
-
-            }
-
-
-        </script>
     </div>
 
 </body>
